@@ -1,0 +1,7 @@
+$phone : '(max-width: 888px)';
+
+@mixin respond-to($media) {
+    @media only screen and #{$media} {
+        @content;
+    }
+}

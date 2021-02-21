@@ -1,0 +1,57 @@
+<form class='route-form' [formGroup]='routeForm' (submit)='onSave()'>
+<div class='route-form-row-header'>
+  <h2>Информация о маршруте</h2>
+</div>
+
+<div class='route-form-row-title'>
+  <span class='labels' [ngClass]='{required: routeForm.controls.longWalk.value}'>Наименование</span>
+  <input type='text' formControlName='title'>
+</div>
+
+<div class='route-form-row-author'>
+  <span class='labels' [ngClass]='{required: routeForm.controls.longWalk.value}'>Автор маршрута</span>
+  <input type='text' formControlName='author'>
+</div>
+
+<div class='route-form-row-executor-type'>
+  <span class='labels' [ngClass]='{required: routeForm.controls.longWalk.value}'>Тип исполнителя</span>
+  <label class="custom-select-wrap">
+    <select class='custom-select' name='executor-type' formControlName='executorRole'>
+      <option value=''>Выберите исполнителя</option>
+      <option *ngFor='let executor of executors' [ngValue]='executor'>
+        {{executor}}
+      </option>
+    </select>
+  </label>
+</div>
+
+<div class='route-form-row-week-group'>
+  <span class='labels' [ngClass]='{required: routeForm.controls.longWalk.value}'>Дни обходов</span>
+  <div class='week-group-radio-container'>
+    <div id='week-group'>
+      <input type='radio' id='mon' name='day' formControlName='day' value='mon'>
+      <label for='mon'>Пн</label>
+      <input type='radio' id='tue' name='day' formControlName='day' value='tue'>
+      <label for='tue'>Вт</label>
+      <input type='radio' id='wed' name='day' formControlName='day' value='wed'>
+      <label for='wed'>Ср</label>
+      <input type='radio' id='thu' name='day' formControlName='day' value='thu'>
+      <label for='thu'>Чт</label>
+      <input type='radio' id='fri' name='day' formControlName='day' value='fri'>
+      <label for='fri'>Пт</label>
+      <input type='radio' id='sat' name='day' formControlName='day' value='sat'>
+      <label for='sat'>Сб</label>
+      <input type='radio' id='sun' name='day' formControlName='day' value='sun'>
+      <label for='sun'>Вс</label>
+    </div>
+    <div class='week-group-long-walk'>
+      <input type='checkbox' formControlName='longWalk'>
+      <span>Длительный обход</span>
+    </div>
+  </div>
+</div>
+
+<div class='save-button-row'>
+  <button class='save-button' [disabled]='routeForm.status==="INVALID"'>Сохранить</button>
+</div>
+</form>

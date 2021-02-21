@@ -1,0 +1,39 @@
+//clear default styles
+@mixin clear() {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+//fonts
+$font-size: 14px;
+$h2-size: 18px;
+
+//colors
+$form-color: #f8f9fd;
+$button-color: #455ff2;
+$button-disabled-color: #b6b6b6;
+
+//route-form
+$form-width : 50vw;
+$form-height : auto;
+$form-width-phone : 100%;
+$form-height-phone : auto;
+$form-margin-top: 5vh;
+$form-margin-left-phone: 5vw;
+$form-padding-left: 1vw;
+$form-padding-top: 1.5vh;
+
+//form rows
+$rows-margin-top: 2vh;
+
+//input element sizes
+$input-width: 35vw;
+$input-height: auto;
+$input-width-phone: 60vw;
+
+//input element shadows
+$shadow: 0 0 5px rgba(0,0,0,0.2);
